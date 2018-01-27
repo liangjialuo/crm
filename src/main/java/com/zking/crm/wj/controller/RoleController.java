@@ -1,7 +1,7 @@
-package com.zking.crm.base.controller;
+package com.zking.crm.wj.controller;
 
-import com.zking.crm.base.biz.IRoleBiz;
 import com.zking.crm.base.model.Role;
+import com.zking.crm.wj.biz.IRoleBiz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
