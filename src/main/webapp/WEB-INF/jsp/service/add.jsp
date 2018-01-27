@@ -50,52 +50,6 @@
 	</tr>
 	</table>
 <br />
-<table disabled class="query_form_table" id="table3">
-	<tr>
-		<th>分配给</th>
-		<td>
-			<select>
-				<option>请选择...</option>
-				<option>小明</option>
-				<option>旺财</option>
-				<option>球球</option>
-				<option>孙小美</option>
-				<option>周洁轮</option>
-			</select> <span class="red_star">*</span></td>
-		<th>分配时间</th>
-		<td><input id="t2" name="T18" readonly size="20" /><span class="red_star">*</span></td>
-	</tr>
-</table>
-<br />	
-<table disabled class="query_form_table" id="table1">
-	<tr>
-		<th>服务处理</th>
-		<td colspan="3"><textarea rows="6" cols="50"></textarea><span class="red_star">*</span></td>
-	</tr>
-	<tr>
-		<th>处理人</th>
-		<td><input name="T17" value="刘颖" readonly size="20" /><span class="red_star">*</span></td>
-		<th>处理时间</th>
-		<td><input id="t3" name="T16" readonly size="20" /><span class="red_star">*</span></td>
-	</tr>
-</table>
-<br />
-<table disabled class="query_form_table" id="table2">
-	<tr>
-		<th>处理结果</th>
-		<td><input name="T10" size="20" /><span class="red_star">*</span></td>
-		<th>满意度</th>
-		<td>
-			<select name="D1">
-				<option>请选择...</option>
-				<option>☆☆☆☆☆</option>
-				<option>☆☆☆☆</option>
-				<option>☆☆☆</option>
-				<option>☆☆</option>
-				<option>☆</option>
-			</select><span class="red_star">*</span></td>
-	</tr>
-</table>
 <script>
 	setCurTime('t1');
 	setCurTime('t2');

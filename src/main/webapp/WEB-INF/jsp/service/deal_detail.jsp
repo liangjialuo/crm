@@ -69,22 +69,6 @@
 	</tr>
 </table>
 <br />
-<table disabled class="query_form_table" id="table2">
-	<tr>
-		<th>处理结果</th>
-		<td><input name="T10" size="20" /><span class="red_star">*</span></td>
-		<th>满意度</th>
-		<td>
-			<select name="D1">
-				<option>请选择...</option>
-				<option>☆☆☆☆☆</option>
-				<option>☆☆☆☆</option>
-				<option>☆☆☆</option>
-				<option>☆☆</option>
-				<option>☆</option>
-			</select><span class="red_star">*</span></td>
-	</tr>
-</table>
 <script>
     setCurTime('t3');
 </script>
