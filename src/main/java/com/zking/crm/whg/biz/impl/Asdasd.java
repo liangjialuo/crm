@@ -11,6 +11,7 @@ public class Asdasd implements aaaaa {
 
     @Override
     public List<Function> list(Function function) {
+        System.out.println("123123123");
         return null;
     }
 }
