@@ -17,7 +17,9 @@ public class RoleController {
 
     @RequestMapping("/roleList")
     @ResponseBody
-    public List<Role> rightList(Role right, HttpServletResponse response)  {
+    public List<Role> rightList(Role right, HttpServletResponse response) {
+        System.out.println("123456789");
         return iRoleBiz.list(right);
+
     }
 }
