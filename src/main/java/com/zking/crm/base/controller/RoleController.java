@@ -18,8 +18,6 @@ public class RoleController {
     @RequestMapping("/roleList")
     @ResponseBody
     public List<Role> rightList(Role right, HttpServletResponse response)  {
-        System.out.println(15616);
-        System.out.println(1234567890);
         return iRoleBiz.list(right);
     }
 }
