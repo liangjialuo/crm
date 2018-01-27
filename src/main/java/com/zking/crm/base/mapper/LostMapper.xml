@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.crm.base.mapper.LostMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.crm.base.model.Lost" >
+    <constructor >
+      <idArg column="lst_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="cust_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="usr_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="lst_cust_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="lst_last_order_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="lst_lost_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="lst_delay" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="lst_reason" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="lst_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    lst_id, cust_no, usr_id, lst_cust_name, lst_last_order_date, lst_lost_date, lst_delay, 
+    lst_reason, lst_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cst_lost
+    where lst_id = #{lstId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cst_lost
+    where lst_id = #{lstId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.crm.base.model.Lost" >
+    insert into cst_lost (lst_id, cust_no, usr_id, 
+      lst_cust_name, lst_last_order_date, lst_lost_date, 
+      lst_delay, lst_reason, lst_status
+      )
+    values (#{lstId,jdbcType=INTEGER}, #{custNo,jdbcType=VARCHAR}, #{usrId,jdbcType=INTEGER}, 
+      #{lstCustName,jdbcType=VARCHAR}, #{lstLastOrderDate,jdbcType=TIMESTAMP}, #{lstLostDate,jdbcType=TIMESTAMP}, 
+      #{lstDelay,jdbcType=VARCHAR}, #{lstReason,jdbcType=VARCHAR}, #{lstStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.crm.base.model.Lost" >
+    insert into cst_lost
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="lstId != null" >
+        lst_id,
+      </if>
+      <if test="custNo != null" >
+        cust_no,
+      </if>
+      <if test="usrId != null" >
+        usr_id,
+      </if>
+      <if test="lstCustName != null" >
+        lst_cust_name,
+      </if>
+      <if test="lstLastOrderDate != null" >
+        lst_last_order_date,
+      </if>
+      <if test="lstLostDate != null" >
+        lst_lost_date,
+      </if>
+      <if test="lstDelay != null" >
+        lst_delay,
+      </if>
+      <if test="lstReason != null" >
+        lst_reason,
+      </if>
+      <if test="lstStatus != null" >
+        lst_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="lstId != null" >
+        #{lstId,jdbcType=INTEGER},
+      </if>
+      <if test="custNo != null" >
+        #{custNo,jdbcType=VARCHAR},
+      </if>
+      <if test="usrId != null" >
+        #{usrId,jdbcType=INTEGER},
+      </if>
+      <if test="lstCustName != null" >
+        #{lstCustName,jdbcType=VARCHAR},
+      </if>
+      <if test="lstLastOrderDate != null" >
+        #{lstLastOrderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lstLostDate != null" >
+        #{lstLostDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lstDelay != null" >
+        #{lstDelay,jdbcType=VARCHAR},
+      </if>
+      <if test="lstReason != null" >
+        #{lstReason,jdbcType=VARCHAR},
+      </if>
+      <if test="lstStatus != null" >
+        #{lstStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.crm.base.model.Lost" >
+    update cst_lost
+    <set >
+      <if test="custNo != null" >
+        cust_no = #{custNo,jdbcType=VARCHAR},
+      </if>
+      <if test="usrId != null" >
+        usr_id = #{usrId,jdbcType=INTEGER},
+      </if>
+      <if test="lstCustName != null" >
+        lst_cust_name = #{lstCustName,jdbcType=VARCHAR},
+      </if>
+      <if test="lstLastOrderDate != null" >
+        lst_last_order_date = #{lstLastOrderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lstLostDate != null" >
+        lst_lost_date = #{lstLostDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lstDelay != null" >
+        lst_delay = #{lstDelay,jdbcType=VARCHAR},
+      </if>
+      <if test="lstReason != null" >
+        lst_reason = #{lstReason,jdbcType=VARCHAR},
+      </if>
+      <if test="lstStatus != null" >
+        lst_status = #{lstStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where lst_id = #{lstId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.crm.base.model.Lost" >
+    update cst_lost
+    set cust_no = #{custNo,jdbcType=VARCHAR},
+      usr_id = #{usrId,jdbcType=INTEGER},
+      lst_cust_name = #{lstCustName,jdbcType=VARCHAR},
+      lst_last_order_date = #{lstLastOrderDate,jdbcType=TIMESTAMP},
+      lst_lost_date = #{lstLostDate,jdbcType=TIMESTAMP},
+      lst_delay = #{lstDelay,jdbcType=VARCHAR},
+      lst_reason = #{lstReason,jdbcType=VARCHAR},
+      lst_status = #{lstStatus,jdbcType=INTEGER}
+    where lst_id = #{lstId,jdbcType=INTEGER}
+  </update>
+</mapper>

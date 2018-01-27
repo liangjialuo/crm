@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入外部配置文件 -->
+    <properties resource="jdbc.properties"/>
+
+    <settings>
+        <setting name="logImpl" value="SLF4J"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!-- 别名 -->
+    <typeAliases>
+        <!--<typeAlias type="com.zking.orm.model.Book" alias="Book"/>-->
+        <!--<typeAlias type="com.zking.orm.model.Booktype" alias="Booktype"/>-->
+        <!--<typeAlias type="com.zking.orm.model.Order" alias="Order"/>-->
+        <!--<typeAlias type="com.zking.orm.model.OrderItem" alias="OrderItem"/>-->
+        <!--<typeAlias type="com.zking.orm.model.Shopping" alias="Shopping"/>-->
+    </typeAliases>
+</configuration>

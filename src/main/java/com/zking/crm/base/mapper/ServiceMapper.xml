@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.crm.base.mapper.ServiceMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.crm.base.model.Service" >
+    <constructor >
+      <idArg column="svr_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="cust_no" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="usr_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sys_usr_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sys_usr_id2" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="svr_type" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="svr_title" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="svr_status" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="svr_request" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="svr_create_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="svr_due_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="svr_deal" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="svr_deal_date" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="svr_result" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="svr_satisfy" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    svr_id, cust_no, usr_id, sys_usr_id, sys_usr_id2, svr_type, svr_title, svr_status, 
+    svr_request, svr_create_date, svr_due_date, svr_deal, svr_deal_date, svr_result, 
+    svr_satisfy
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cst_service
+    where svr_id = #{svrId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cst_service
+    where svr_id = #{svrId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.crm.base.model.Service" >
+    insert into cst_service (svr_id, cust_no, usr_id, 
+      sys_usr_id, sys_usr_id2, svr_type, 
+      svr_title, svr_status, svr_request, 
+      svr_create_date, svr_due_date, svr_deal, 
+      svr_deal_date, svr_result, svr_satisfy
+      )
+    values (#{svrId,jdbcType=INTEGER}, #{custNo,jdbcType=VARCHAR}, #{usrId,jdbcType=INTEGER}, 
+      #{sysUsrId,jdbcType=INTEGER}, #{sysUsrId2,jdbcType=INTEGER}, #{svrType,jdbcType=VARCHAR}, 
+      #{svrTitle,jdbcType=VARCHAR}, #{svrStatus,jdbcType=VARCHAR}, #{svrRequest,jdbcType=VARCHAR}, 
+      #{svrCreateDate,jdbcType=TIMESTAMP}, #{svrDueDate,jdbcType=TIMESTAMP}, #{svrDeal,jdbcType=VARCHAR}, 
+      #{svrDealDate,jdbcType=TIMESTAMP}, #{svrResult,jdbcType=VARCHAR}, #{svrSatisfy,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.crm.base.model.Service" >
+    insert into cst_service
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="svrId != null" >
+        svr_id,
+      </if>
+      <if test="custNo != null" >
+        cust_no,
+      </if>
+      <if test="usrId != null" >
+        usr_id,
+      </if>
+      <if test="sysUsrId != null" >
+        sys_usr_id,
+      </if>
+      <if test="sysUsrId2 != null" >
+        sys_usr_id2,
+      </if>
+      <if test="svrType != null" >
+        svr_type,
+      </if>
+      <if test="svrTitle != null" >
+        svr_title,
+      </if>
+      <if test="svrStatus != null" >
+        svr_status,
+      </if>
+      <if test="svrRequest != null" >
+        svr_request,
+      </if>
+      <if test="svrCreateDate != null" >
+        svr_create_date,
+      </if>
+      <if test="svrDueDate != null" >
+        svr_due_date,
+      </if>
+      <if test="svrDeal != null" >
+        svr_deal,
+      </if>
+      <if test="svrDealDate != null" >
+        svr_deal_date,
+      </if>
+      <if test="svrResult != null" >
+        svr_result,
+      </if>
+      <if test="svrSatisfy != null" >
+        svr_satisfy,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="svrId != null" >
+        #{svrId,jdbcType=INTEGER},
+      </if>
+      <if test="custNo != null" >
+        #{custNo,jdbcType=VARCHAR},
+      </if>
+      <if test="usrId != null" >
+        #{usrId,jdbcType=INTEGER},
+      </if>
+      <if test="sysUsrId != null" >
+        #{sysUsrId,jdbcType=INTEGER},
+      </if>
+      <if test="sysUsrId2 != null" >
+        #{sysUsrId2,jdbcType=INTEGER},
+      </if>
+      <if test="svrType != null" >
+        #{svrType,jdbcType=VARCHAR},
+      </if>
+      <if test="svrTitle != null" >
+        #{svrTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="svrStatus != null" >
+        #{svrStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="svrRequest != null" >
+        #{svrRequest,jdbcType=VARCHAR},
+      </if>
+      <if test="svrCreateDate != null" >
+        #{svrCreateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="svrDueDate != null" >
+        #{svrDueDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="svrDeal != null" >
+        #{svrDeal,jdbcType=VARCHAR},
+      </if>
+      <if test="svrDealDate != null" >
+        #{svrDealDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="svrResult != null" >
+        #{svrResult,jdbcType=VARCHAR},
+      </if>
+      <if test="svrSatisfy != null" >
+        #{svrSatisfy,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.crm.base.model.Service" >
+    update cst_service
+    <set >
+      <if test="custNo != null" >
+        cust_no = #{custNo,jdbcType=VARCHAR},
+      </if>
+      <if test="usrId != null" >
+        usr_id = #{usrId,jdbcType=INTEGER},
+      </if>
+      <if test="sysUsrId != null" >
+        sys_usr_id = #{sysUsrId,jdbcType=INTEGER},
+      </if>
+      <if test="sysUsrId2 != null" >
+        sys_usr_id2 = #{sysUsrId2,jdbcType=INTEGER},
+      </if>
+      <if test="svrType != null" >
+        svr_type = #{svrType,jdbcType=VARCHAR},
+      </if>
+      <if test="svrTitle != null" >
+        svr_title = #{svrTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="svrStatus != null" >
+        svr_status = #{svrStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="svrRequest != null" >
+        svr_request = #{svrRequest,jdbcType=VARCHAR},
+      </if>
+      <if test="svrCreateDate != null" >
+        svr_create_date = #{svrCreateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="svrDueDate != null" >
+        svr_due_date = #{svrDueDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="svrDeal != null" >
+        svr_deal = #{svrDeal,jdbcType=VARCHAR},
+      </if>
+      <if test="svrDealDate != null" >
+        svr_deal_date = #{svrDealDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="svrResult != null" >
+        svr_result = #{svrResult,jdbcType=VARCHAR},
+      </if>
+      <if test="svrSatisfy != null" >
+        svr_satisfy = #{svrSatisfy,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where svr_id = #{svrId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.crm.base.model.Service" >
+    update cst_service
+    set cust_no = #{custNo,jdbcType=VARCHAR},
+      usr_id = #{usrId,jdbcType=INTEGER},
+      sys_usr_id = #{sysUsrId,jdbcType=INTEGER},
+      sys_usr_id2 = #{sysUsrId2,jdbcType=INTEGER},
+      svr_type = #{svrType,jdbcType=VARCHAR},
+      svr_title = #{svrTitle,jdbcType=VARCHAR},
+      svr_status = #{svrStatus,jdbcType=VARCHAR},
+      svr_request = #{svrRequest,jdbcType=VARCHAR},
+      svr_create_date = #{svrCreateDate,jdbcType=TIMESTAMP},
+      svr_due_date = #{svrDueDate,jdbcType=TIMESTAMP},
+      svr_deal = #{svrDeal,jdbcType=VARCHAR},
+      svr_deal_date = #{svrDealDate,jdbcType=TIMESTAMP},
+      svr_result = #{svrResult,jdbcType=VARCHAR},
+      svr_satisfy = #{svrSatisfy,jdbcType=VARCHAR}
+    where svr_id = #{svrId,jdbcType=INTEGER}
+  </update>
+</mapper>

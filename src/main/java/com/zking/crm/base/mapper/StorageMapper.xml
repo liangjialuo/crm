@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.crm.base.mapper.StorageMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.crm.base.model.Storage" >
+    <constructor >
+      <idArg column="stk_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="prod_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="stk_warehouse" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="stk_ware" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="stk_count" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="stk_memo" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    stk_id, prod_id, stk_warehouse, stk_ware, stk_count, stk_memo
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from storage
+    where stk_id = #{stkId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from storage
+    where stk_id = #{stkId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.crm.base.model.Storage" >
+    insert into storage (stk_id, prod_id, stk_warehouse, 
+      stk_ware, stk_count, stk_memo
+      )
+    values (#{stkId,jdbcType=INTEGER}, #{prodId,jdbcType=INTEGER}, #{stkWarehouse,jdbcType=VARCHAR}, 
+      #{stkWare,jdbcType=VARCHAR}, #{stkCount,jdbcType=INTEGER}, #{stkMemo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.crm.base.model.Storage" >
+    insert into storage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stkId != null" >
+        stk_id,
+      </if>
+      <if test="prodId != null" >
+        prod_id,
+      </if>
+      <if test="stkWarehouse != null" >
+        stk_warehouse,
+      </if>
+      <if test="stkWare != null" >
+        stk_ware,
+      </if>
+      <if test="stkCount != null" >
+        stk_count,
+      </if>
+      <if test="stkMemo != null" >
+        stk_memo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stkId != null" >
+        #{stkId,jdbcType=INTEGER},
+      </if>
+      <if test="prodId != null" >
+        #{prodId,jdbcType=INTEGER},
+      </if>
+      <if test="stkWarehouse != null" >
+        #{stkWarehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="stkWare != null" >
+        #{stkWare,jdbcType=VARCHAR},
+      </if>
+      <if test="stkCount != null" >
+        #{stkCount,jdbcType=INTEGER},
+      </if>
+      <if test="stkMemo != null" >
+        #{stkMemo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.crm.base.model.Storage" >
+    update storage
+    <set >
+      <if test="prodId != null" >
+        prod_id = #{prodId,jdbcType=INTEGER},
+      </if>
+      <if test="stkWarehouse != null" >
+        stk_warehouse = #{stkWarehouse,jdbcType=VARCHAR},
+      </if>
+      <if test="stkWare != null" >
+        stk_ware = #{stkWare,jdbcType=VARCHAR},
+      </if>
+      <if test="stkCount != null" >
+        stk_count = #{stkCount,jdbcType=INTEGER},
+      </if>
+      <if test="stkMemo != null" >
+        stk_memo = #{stkMemo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where stk_id = #{stkId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.crm.base.model.Storage" >
+    update storage
+    set prod_id = #{prodId,jdbcType=INTEGER},
+      stk_warehouse = #{stkWarehouse,jdbcType=VARCHAR},
+      stk_ware = #{stkWare,jdbcType=VARCHAR},
+      stk_count = #{stkCount,jdbcType=INTEGER},
+      stk_memo = #{stkMemo,jdbcType=VARCHAR}
+    where stk_id = #{stkId,jdbcType=INTEGER}
+  </update>
+</mapper>

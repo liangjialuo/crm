@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.crm.base.mapper.OrdersLineMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.crm.base.model.OrdersLine" >
+    <constructor >
+      <idArg column="odd_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="prod_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="odr_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="odd_count" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="odd_unit" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="odd_price" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    odd_id, prod_id, odr_id, odd_count, odd_unit, odd_price
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from orders_line
+    where odd_id = #{oddId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from orders_line
+    where odd_id = #{oddId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.crm.base.model.OrdersLine" >
+    insert into orders_line (odd_id, prod_id, odr_id, 
+      odd_count, odd_unit, odd_price
+      )
+    values (#{oddId,jdbcType=INTEGER}, #{prodId,jdbcType=INTEGER}, #{odrId,jdbcType=INTEGER}, 
+      #{oddCount,jdbcType=INTEGER}, #{oddUnit,jdbcType=VARCHAR}, #{oddPrice,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.crm.base.model.OrdersLine" >
+    insert into orders_line
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oddId != null" >
+        odd_id,
+      </if>
+      <if test="prodId != null" >
+        prod_id,
+      </if>
+      <if test="odrId != null" >
+        odr_id,
+      </if>
+      <if test="oddCount != null" >
+        odd_count,
+      </if>
+      <if test="oddUnit != null" >
+        odd_unit,
+      </if>
+      <if test="oddPrice != null" >
+        odd_price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oddId != null" >
+        #{oddId,jdbcType=INTEGER},
+      </if>
+      <if test="prodId != null" >
+        #{prodId,jdbcType=INTEGER},
+      </if>
+      <if test="odrId != null" >
+        #{odrId,jdbcType=INTEGER},
+      </if>
+      <if test="oddCount != null" >
+        #{oddCount,jdbcType=INTEGER},
+      </if>
+      <if test="oddUnit != null" >
+        #{oddUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="oddPrice != null" >
+        #{oddPrice,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.crm.base.model.OrdersLine" >
+    update orders_line
+    <set >
+      <if test="prodId != null" >
+        prod_id = #{prodId,jdbcType=INTEGER},
+      </if>
+      <if test="odrId != null" >
+        odr_id = #{odrId,jdbcType=INTEGER},
+      </if>
+      <if test="oddCount != null" >
+        odd_count = #{oddCount,jdbcType=INTEGER},
+      </if>
+      <if test="oddUnit != null" >
+        odd_unit = #{oddUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="oddPrice != null" >
+        odd_price = #{oddPrice,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where odd_id = #{oddId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.crm.base.model.OrdersLine" >
+    update orders_line
+    set prod_id = #{prodId,jdbcType=INTEGER},
+      odr_id = #{odrId,jdbcType=INTEGER},
+      odd_count = #{oddCount,jdbcType=INTEGER},
+      odd_unit = #{oddUnit,jdbcType=VARCHAR},
+      odd_price = #{oddPrice,jdbcType=DECIMAL}
+    where odd_id = #{oddId,jdbcType=INTEGER}
+  </update>
+</mapper>
