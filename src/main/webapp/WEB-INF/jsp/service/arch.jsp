@@ -69,7 +69,7 @@
         <td class="list_data_text">已分配</td>
         <td class="list_data_op">
 
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
+            <img onclick="to('service/detail');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
     </tr>
     <tr>
         <td class="list_data_number">455</td>
@@ -81,7 +81,7 @@
         <td class="list_data_text">已分配</td>
         <td class="list_data_op">
 
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
+            <img onclick="to('service/detail');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
     </tr>
     <tr>
         <td class="list_data_number">454</td>
@@ -93,81 +93,7 @@
         <td class="list_data_text">已分配</td>
         <td class="list_data_op">
 
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
-    </tr>
-    <tr>
-        <td class="list_data_number">453</td>
-        <td class="list_data_text">云南天河烟草公司</td>
-        <td class="list_data_ltext">询问收音机价格</td>
-        <td class="list_data_text">建议</td>
-        <td class="list_data_text">小明</td>
-        <td class="list_data_text">2007年12月02日</td>
-
-        <td class="list_data_text">已分配</td>
-
-        <td class="list_data_op">
-
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
-    </tr>
-    <tr>
-        <td class="list_data_number">452</td>
-        <td class="list_data_text">云南天河烟草公司</td>
-        <td class="list_data_ltext">询问收音机价格</td>
-        <td class="list_data_text">咨询</td>
-        <td class="list_data_text">小明</td>
-        <td class="list_data_text">2007年12月02日</td>
-        <td class="list_data_text">已分配</td>
-        <td class="list_data_op">
-
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
-    </tr>
-    <tr>
-        <td class="list_data_number">451</td>
-        <td class="list_data_text">云南天河烟草公司</td>
-        <td class="list_data_ltext">询问收音机价格</td>
-        <td class="list_data_text">投诉</td>
-        <td class="list_data_text">小明</td>
-        <td class="list_data_text">2007年12月02日</td>
-        <td class="list_data_text">已分配</td>
-        <td class="list_data_op">
-
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
-    </tr>
-    <tr>
-        <td class="list_data_number" height="15">540</td>
-        <td class="list_data_text" height="15">云南天河烟草公司</td>
-        <td class="list_data_ltext" height="15">询问收音机价格</td>
-        <td class="list_data_text" height="15">建议</td>
-        <td class="list_data_text" height="15">小明</td>
-        <td class="list_data_text" height="15">2007年12月02日</td>
-        <td class="list_data_text" height="15">已分配</td>
-        <td class="list_data_op" height="15">
-
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
-    </tr>
-    <tr>
-        <td class="list_data_number" height="35">439</td>
-        <td class="list_data_text" height="35">云南天河烟草公司</td>
-        <td class="list_data_ltext" height="35">询问收音机价格</td>
-        <td class="list_data_text" height="35">咨询</td>
-        <td class="list_data_text" height="35">小明</td>
-        <td class="list_data_text" height="35">2007年12月02日</td>
-        <td class="list_data_text" height="35">已分配</td>
-        <td class="list_data_op" height="35">
-
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
-    </tr>
-    <tr>
-        <td class="list_data_number">438</td>
-        <td class="list_data_text">云南天河烟草公司</td>
-        <td class="list_data_ltext">询问收音机价格</td>
-        <td class="list_data_text">建议</td>
-        <td class="list_data_text">小明</td>
-        <td class="list_data_text">2007年12月02日</td>
-        <td class="list_data_text">已分配</td>
-        <td class="list_data_op">
-
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
+            <img onclick="to('service/detail');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
     </tr>
     <tr>
         <td class="list_data_number">437</td>
@@ -179,7 +105,7 @@
         <td class="list_data_text">已分配</td>
         <td class="list_data_op">
 
-            <img onclick="to('detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
+            <img onclick="to('service/detail');" title="查看" src="../images/bt_detail.gif" class="op_button"/></td>
     </tr>
     <tr>
         <th colspan="8" class="pager">

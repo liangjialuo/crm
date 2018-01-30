@@ -8,4 +8,6 @@ import java.util.List;
 public interface aaaaa {
 
     List<Function> list(Function function);
+
+    List<Function> list11(Function function);
 }
