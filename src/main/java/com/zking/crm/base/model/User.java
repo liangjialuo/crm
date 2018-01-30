@@ -62,4 +62,15 @@ public class User {
     public void setUsrFlag(Integer usrFlag) {
         this.usrFlag = usrFlag;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "usrId=" + usrId +
+                ", roleId=" + roleId +
+                ", usrName='" + usrName + '\'' +
+                ", usrPassword='" + usrPassword + '\'' +
+                ", usrFlag=" + usrFlag +
+                '}';
+    }
 }

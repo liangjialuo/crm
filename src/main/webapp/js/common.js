@@ -7,7 +7,8 @@ function help(msg) {
 }
 
 function to(url) {
-    window.location.href = "http://localhost:8080/crm/" + url;
+    self.location = "/crm/" + url;
+    // window.location.href = "/crm/" + url;
 }
 
 function back() {

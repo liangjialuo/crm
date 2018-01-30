@@ -41,12 +41,12 @@
         <a href=""><img src="images/logo.png" alt=""/></a>
     </div>
     <div class="login_m">
-        <form id="login" action="index" method="post">
+        <form id="login" action="user/login" method="post">
             <ul>
                 <li class="wz">用户名</li>
-                <li><input name="" type="text"></li>
+                <li><input name="usrName" type="text"></li>
                 <li class="wz">密码</li>
-                <li><input name="" type="password"></li>
+                <li><input name="usrPassword" type="password"></li>
 
                 <li class="l_btn" onclick="onLogin()">
                     <a>登录</a>
