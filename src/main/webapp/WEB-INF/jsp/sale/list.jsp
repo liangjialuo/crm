@@ -8,14 +8,16 @@
     <script src="../js/common.js">
     </script>
     <script type="application/javascript">
-
+    function saleAdd() {
+       window.open("add","asdas");
+    }
     </script>
 </head>
 <body>
 
 <div class="page_title"></div>
 <div class="button_bar">
-    <button class="common_button" onclick="to('sale/add');">新建</button>
+    <button class="common_button" onclick="saleAdd()">新建</button>
     <button class="common_button" onclick="reload();">查询</button>
 </div>
 <table class="query_form_table">

@@ -12,7 +12,7 @@ public class UserBizImpl implements IUserBiz {
     private UserMapper userMapper;
 
     @Override
-    public void login(User user) {
-        userMapper.selectByPrimaryKey(user);
+    public User login(User user) {
+        return userMapper.selectByPrimaryKey(user);
     }
 }

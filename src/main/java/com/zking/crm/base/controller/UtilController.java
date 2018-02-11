@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UtilController {
     @RequestMapping("/index")
     public String index(User user) {
-        System.out.println("***********************************");
-        System.out.println(user);
-        System.out.println("***********************************");
         return "index";
     }
 
@@ -66,9 +63,6 @@ public class UtilController {
     //客户开发计划===制定计划
     @RequestMapping("/service/add")
     public String serviceAdd(User user) {
-        System.out.println("***********************************");
-        System.out.println(user);
-        System.out.println("***********************************");
         return "service/add";
     }
 
@@ -132,9 +126,6 @@ public class UtilController {
 
     @RequestMapping("/login")
     public String login(User user) {
-        System.out.println("***********************************");
-        System.out.println(user);
-        System.out.println("***********************************");
         return "login";
     }
 }

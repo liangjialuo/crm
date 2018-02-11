@@ -1,7 +1,8 @@
-package com.zking.crm.whg.biz;
+package com.zking.crm.whg.biz.impl;
 
 import com.zking.crm.base.mapper.ServiceMapper;
 import com.zking.crm.base.model.Service;
+import com.zking.crm.whg.biz.IServiceBiz;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Service
@@ -12,7 +13,6 @@ public class ServiceBizImpl implements IServiceBiz {
 
     @Override
     public void add(Service service) {
-
         serviceMapper.insert(service);
     }
 
